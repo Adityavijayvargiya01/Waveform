@@ -1,11 +1,9 @@
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 import Sidebar from './components/Sidebar'
 import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react'
-import { useParams } from 'next/navigation'
-import { data } from 'autoprefixer'
+
 
 
 export default function Home() {
@@ -34,9 +32,7 @@ export default function Home() {
     <main className='flex w-full h-screen overflow-hidden bg-black'>
       <Sidebar />
       <div>
-        accessToken: {x}
-        playlists: {playlists.map((playlist) => <div key={playlist.id}>{playlist.name}</div>)}
-
+        Main
       </div>
     </main>
     <div className='sticky bottom-0 h-20 w-full bg-red-100'></div>
