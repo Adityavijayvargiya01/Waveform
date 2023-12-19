@@ -32,7 +32,7 @@ export default function Home() {
     <main className='flex w-full h-screen overflow-hidden bg-black'>
       <Sidebar />
       <div>
-        Main
+        
       </div>
     </main>
     <div className='sticky bottom-0 h-20 w-full bg-red-100'></div>

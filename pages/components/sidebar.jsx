@@ -26,7 +26,7 @@ const sidebar = () => {
   return (
     <div className='w-64 grow-0 text-neutral-400 shrink-0 border-r border-neutral-900 flex flex-col p-5 space-y-4 text-sm'>
 
-        <div className='flex items-center space-x-2 text-3xl text-white'><Waveform size={50} color="#1db954" /><span>Waveform</span></div>
+        <div className='flex items-center space-x-2 mb-3 text-3xl text-white'><Waveform size={50} color="#1db954" /><span>Waveform</span></div>
         
             <button className='flex items-center space-x-2 hover:text-white'>
                 <HomeIcon className='w-6 h-6' /> 
@@ -57,7 +57,13 @@ const sidebar = () => {
             
             <hr className='border-neutral-900'/>
 
-            {playlists.map((playlist) => <div key={playlist.id} className='cursor-default hover:text-white '>{playlist.name}</div>)}
+            {
+              playlists.map((playlist) => {
+              return <p key={playlist.id} className='cursor-default hover:text-white w-52'>{playlist.name}</p>
+
+              })
+
+            }
             
 
         
