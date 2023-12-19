@@ -35,7 +35,7 @@ export default function Home() {
         
       </div>
     </main>
-    <div className='sticky bottom-0 h-20 w-full bg-red-100'></div>
+   {/* <div className='sticky bottom-0 h-20 w-full bg-neutral-600'></div> */}
     </>
   )
 }
