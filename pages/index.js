@@ -1,10 +1,7 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
-
-import Sidebar from './components/sidebar'
-
-
+import Sidebar from './components/Sidebar'
 import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
@@ -38,8 +35,7 @@ export default function Home() {
       <Sidebar />
       <div>
         accessToken: {x}
-        {console.log(playlists)}
-        {console.log.setPlaylists}
+        playlists: {playlists.map((playlist) => <div key={playlist.id}>{playlist.name}</div>)}
 
       </div>
     </main>
