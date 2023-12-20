@@ -3,37 +3,31 @@ const inter = Inter({ subsets: ['latin'] })
 import Sidebar from './components/Sidebar'
 import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react'
+import Playlistview from "@/pages/components/Playlistview";
+import Search from "@/pages/components/Search";
+import Library from "@/pages/components/Library";
+import Artist from "@/pages/components/Artist";
+
 
 
 
 export default function Home() {
-  const {data:session} = useSession()
-  const [x , setX] = useState('')
-  const [playlists, setPlaylists] = useState([])
-  useEffect(() => {
-    async function f(){
-    if(session && session.accessToken){
-      setX(session.accessToken)
-      const response = await fetch("https://api.spotify.com/v1/me/playlists", {
-        headers: { 'Authorization': `Bearer ${session.accessToken}` }
-      })
-     
-      const data = await response.json()
-      setPlaylists(data.items)
-      console.log(data)
-      }
-    }
-    f()
-  }, [session])
-
+  const [view , setView] = useState('search') 
+  const [globalPlaylistid , setGlobalPlaylistid] = useState(null)
+  const [globalArtistid , setGlobalArtistid] = useState(null)
 
   return (
     <>
-    <main className='flex w-full h-screen overflow-hidden bg-black'>
-      <Sidebar />
-      <div>
-        
-      </div>
+    <main className='flex w-full h-screen overflow-hidden overflow-y-scroll bg-black'>
+      <Sidebar 
+      view={view}
+      setView={setView}
+      setGlobalPlaylistid={setGlobalPlaylistid}
+      />
+      {view == 'playlist' && <Playlistview />}
+      {view == 'search' && <Search />}
+      {view == 'library' && <Library/>}
+      {view == 'artist' && <Artist />}
     </main>
    {/* <div className='sticky bottom-0 h-20 w-full bg-neutral-600'></div> */}
     </>

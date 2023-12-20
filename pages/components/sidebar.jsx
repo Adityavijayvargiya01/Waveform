@@ -5,10 +5,15 @@ import { useEffect, useState } from 'react'
 import { Waveform } from "@phosphor-icons/react";
 
 
-const sidebar = () => {
+
+const sidebar = ({view , setView ,setGlobalPlaylistid}) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
   const {data:session} = useSession()
+    // eslint-disable-next-line react-hooks/rules-of-hooks
   const [x , setX] = useState('')
+    // eslint-disable-next-line react-hooks/rules-of-hooks
   const [playlists, setPlaylists] = useState([])
+    // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     async function f(){
     if(session && session.accessToken){
@@ -24,7 +29,7 @@ const sidebar = () => {
     f()
   }, [session])
   return (
-    <div className='w-64 grow-0 text-neutral-400 shrink-0 border-r border-neutral-900 flex flex-col p-5 space-y-4 text-sm'>
+    <div className='w-64 grow-0 text-neutral-400 shrink-0 border-r  border-neutral-900 flex flex-col p-5 space-y-4 text-sm'>
 
         <div className='flex items-center space-x-2 mb-3 text-3xl text-white'><Waveform size={50} color="#1db954" /><span>Waveform</span></div>
         
@@ -33,12 +38,12 @@ const sidebar = () => {
             <p>Home</p>
             </button>
 
-            <button className='flex items-center space-x-2 hover:text-white'>
+            <button onClick={() => setView("search")} className={`flex items-center space-x-2 hover:text-white ${view == "search" ? "text-white" : null }`}>
                 <MagnifyingGlassIcon className='w-6 h-6' /> 
             <p>Search</p>
             </button>
 
-            <button className='flex items-center space-x-2 hover:text-white'>
+            <button onClick={() => setView("library")} className={`flex items-center space-x-2 hover:text-white ${view == "library" ? "text-white" : null }`}>
                 <BuildingLibraryIcon className='w-6 h-6' /> 
             <p>Library</p>
             </button>
@@ -59,8 +64,15 @@ const sidebar = () => {
 
             {
               playlists.map((playlist) => {
-              return <p key={playlist.id} className='cursor-default hover:text-white w-52'>{playlist.name}</p>
-
+              return <p
+                  onClick={() => {
+                      setView("playlist")
+                      setGlobalPlaylistid(playlist.id)
+                  }}
+                  key={playlist.id}
+                  className='cursor-default hover:text-white w-52'>{
+                  playlist.name}
+                  </p>
               })
 
             }
