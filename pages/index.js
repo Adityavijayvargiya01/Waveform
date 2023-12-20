@@ -14,7 +14,7 @@ import Artist from "@/pages/components/Artist";
 export default function Home() {
   const [view , setView] = useState('search') 
   const [globalPlaylistId , setGlobalPlaylistId] = useState(null)
-  const [globalArtistid , setGlobalArtistid] = useState(null)
+  const [globalArtistId , setGlobalArtistId] = useState(null)
 
   return (
     <>
@@ -31,7 +31,6 @@ export default function Home() {
       {view === 'library' && <Library/>}
       {view === 'artist' && <Artist />}
     </main>
-   {/* <div className='sticky bottom-0 h-20 w-full bg-neutral-600'></div> */}
     </>
   )
 }

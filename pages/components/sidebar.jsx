@@ -6,7 +6,7 @@ import { Waveform } from "@phosphor-icons/react";
 
 
 
-const sidebar = ({view , setView ,setGlobalPlaylistid}) => {
+const sidebar = ({view , setView ,setGlobalPlaylistId}) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
   const {data:session} = useSession()
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -23,7 +23,6 @@ const sidebar = ({view , setView ,setGlobalPlaylistid}) => {
      
       const data = await response.json()
       setPlaylists(data.items)
-      console.log(data)
       }
     }
     f()
@@ -38,12 +37,12 @@ const sidebar = ({view , setView ,setGlobalPlaylistid}) => {
             <p>Home</p>
             </button>
 
-            <button onClick={() => setView("search")} className={`flex items-center space-x-2 hover:text-white ${view == "search" ? "text-white" : null }`}>
+            <button onClick={() => setView("search")} className={`flex items-center space-x-2 hover:text-white ${view === "search" ? "text-white" : null }`}>
                 <MagnifyingGlassIcon className='w-6 h-6' /> 
             <p>Search</p>
             </button>
 
-            <button onClick={() => setView("library")} className={`flex items-center space-x-2 hover:text-white ${view == "library" ? "text-white" : null }`}>
+            <button onClick={() => setView("library")} className={`flex items-center space-x-2 hover:text-white ${view === "library" ? "text-white" : null }`}>
                 <BuildingLibraryIcon className='w-6 h-6' /> 
             <p>Library</p>
             </button>
@@ -67,7 +66,7 @@ const sidebar = ({view , setView ,setGlobalPlaylistid}) => {
               return <p
                   onClick={() => {
                       setView("playlist")
-                      setGlobalPlaylistid(playlist.id)
+                      setGlobalPlaylistId(playlist.id)
                   }}
                   key={playlist.id}
                   className='cursor-default hover:text-white w-52'>{
