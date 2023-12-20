@@ -13,7 +13,7 @@ import Artist from "@/pages/components/Artist";
 
 export default function Home() {
   const [view , setView] = useState('search') 
-  const [globalPlaylistid , setGlobalPlaylistid] = useState(null)
+  const [globalPlaylistId , setGlobalPlaylistId] = useState(null)
   const [globalArtistid , setGlobalArtistid] = useState(null)
 
   return (
@@ -22,12 +22,14 @@ export default function Home() {
       <Sidebar 
       view={view}
       setView={setView}
-      setGlobalPlaylistid={setGlobalPlaylistid}
+      setGlobalPlaylistId={setGlobalPlaylistId}
       />
-      {view == 'playlist' && <Playlistview />}
-      {view == 'search' && <Search />}
-      {view == 'library' && <Library/>}
-      {view == 'artist' && <Artist />}
+      {view === 'playlist' && <Playlistview
+          globalPlaylistId={globalPlaylistId}
+      />}
+      {view === 'search' && <Search />}
+      {view === 'library' && <Library/>}
+      {view === 'artist' && <Artist />}
     </main>
    {/* <div className='sticky bottom-0 h-20 w-full bg-neutral-600'></div> */}
     </>
