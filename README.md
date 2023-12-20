@@ -1,40 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<hr>
+
+<img alt="icon" src="public/icon.svg"/> 
+
+# Waveform
+
+## Project Overview
+
+Waveform is a Spotify clone built with Next.js, NextAuth.js, Tailwind CSS, and the Spotify API. This project aims to recreate the popular music streaming experience provided by Spotify while utilizing modern web development technologies.
+
+## Features
+
+- **User Authentication:** Waveform incorporates user authentication using NextAuth.js, allowing users to create accounts, log in securely, and enjoy a personalized music experience.
+
+- **Spotify API Integration:** The project seamlessly integrates with the Spotify API to fetch user data, playlists, and music tracks. Users can browse and play their favorite songs just like they would on Spotify.
+
+- **Responsive Design with Tailwind CSS:** The application is designed to be responsive across various devices, thanks to the use of Tailwind CSS. The user interface is visually appealing and user-friendly.
+
+- **Dynamic Routing with Next.js:** Next.js is utilized for dynamic routing, making the application's navigation smooth and enhancing the overall user experience.
 
 ## Getting Started
 
-First, run the development server:
+To run the project locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repository: `git clone https://github.com/your-username/waveform.git`
+2. Navigate to the project directory: `cd waveform`
+3. Install dependencies: `npm install`
+4. Configure environment variables:
+    - Create a `.env.local` file in the root directory.
+    - Add the following variables and replace the placeholders with your Spotify API credentials:
+      ```
+      SPOTIFY_CLIENT_ID=your_spotify_client_id
+      SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
+      NEXTAUTH_URL=http://localhost:3000
+      ```
+5. Run the development server: `npm run dev`
+6. Open your browser and go to [http://localhost:3000](http://localhost:3000) to access Waveform.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Dependencies
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- [Next.js](https://nextjs.org/): A React framework for building server-rendered and statically generated web applications.
+- [NextAuth.js](https://next-auth.js.org/): An authentication library for Next.js applications.
+- [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework for building modern designs.
+- [Spotify API](https://developer.spotify.com/documentation/web-api/): The official Spotify API for fetching music data.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Contributing
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Contributions are welcome! If you'd like to contribute to Waveform, please follow the guidelines outlined in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## License
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
