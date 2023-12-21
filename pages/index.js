@@ -9,8 +9,6 @@ import Library from "@/pages/components/Library";
 import Artist from "@/pages/components/Artist";
 
 
-
-
 export default function Home() {
   const [view , setView] = useState('search') 
   const [globalPlaylistId , setGlobalPlaylistId] = useState(null)
