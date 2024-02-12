@@ -1,8 +1,6 @@
-<hr>
+<img alt="icon" src="public/Waveform.png"/> 
 
-<img alt="icon" src="public/icon.svg"/> 
 
-# Waveform
 
 ## Project Overview
 
