@@ -82,7 +82,7 @@ const Player = ({ globalCurrentSongId, setGlobalCurrentSongId, globalIsTrackPlay
     }, [globalCurrentSongId])
 
     return (
-        <div className='h-16 bg-neutral-800 border-t border-neutral-700 text-white grid grid-cols-3 text-xs md:text-base px-2 md:px-5'>
+        <div className='h-16 bg-black border-t border-neutral-700 text-white grid grid-cols-3 text-xs md:text-base px-2 md:px-5'>
             <div className='flex items-center space-x-4'>
                 {songInfo?.album.images[0].url && <img className='hidden md:inline h-10 w-10' src={songInfo.album.images[0].url} />}
                 <div>
